@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const COSMIC_BUCKET = "my-projects-production-9c87d4d0-2952-11f0-8bac-2911276de7fa";
-const READ_KEY = "s9YZqaKZN3tTrVAr2BIPYXRaWQkRQZZXPU7kfnvH5J1YMoZgsp";
+const COSMIC_BUCKET = import.meta.env.VITE_COSMIC_BUCKET;
+const READ_KEY = import.meta.env.VITE_COSMIC_READ_KEY;
 
 export const getProjects = async () => {
   const url = `https://api.cosmicjs.com/v3/buckets/${COSMIC_BUCKET}/objects?type=projects&read_key=${READ_KEY}`;

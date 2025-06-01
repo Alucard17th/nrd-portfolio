@@ -13,54 +13,70 @@ import {
   Lightbulb,
   RocketTakeoff,
   Discord,
+  CheckCircleFill,
 } from "react-bootstrap-icons";
+import { useForm, ValidationError } from '@formspree/react';
 
 const Contact = () => {
   useEffect(() => {
     AOS.init();
   }, []);
 
+  const [state, handleSubmit] = useForm("xgvywber");
+
   return (
     <section id="contact" className="py-5 bg-light">
       <div className="container shadow-sm">
         <div className="row">
-          <div className="col-6 p-4" data-aos="fade-right" data-aos-duration="1000">
+          <div className="col-lg-6 p-4" data-aos="fade-right" data-aos-duration="1000">
             <div className="d-flex justify-content-center">
               <PersonLinesFill
                 className="display-1 text-dark mb-4"
-                color="#6d7dd2"
+                color="#36cdcd"
               />
             </div>
 
             <h2 className="text-center mb-4">Contact</h2>
-            <form className="mx-auto" style={{ maxWidth: "600px" }}>
+            <form className="mx-auto" style={{ maxWidth: "600px" }} onSubmit={handleSubmit}>
               <div className="mb-3">
                 <label htmlFor="name" className="form-label">
-                  <Person className="me-1" color="#6d7dd2" size={20} /> Name
+                  <Person className="me-1" color="#36cdcd" size={20} /> Name
                 </label>
                 <input
                   type="text"
                   className="form-control"
                   id="name"
                   placeholder="Enter your name"
+                  name="name"
                   required
+                />
+                <ValidationError
+                  prefix="Name"
+                  field="name"
+                  errors={state.errors}
                 />
               </div>
               <div className="mb-3">
                 <label htmlFor="email" className="form-label">
-                  <Envelope className="me-1" color="#6d7dd2" size={20} /> Email
+                  <Envelope className="me-1" color="#36cdcd" size={20} /> Email
                 </label>
                 <input
                   type="email"
                   className="form-control"
                   id="email"
                   placeholder="Enter your email"
+                  name="email"
                   required
+                />
+                <ValidationError
+                  prefix="Email"
+                  field="email"
+                  errors={state.errors}
                 />
               </div>
               <div className="mb-3">
                 <label htmlFor="message" className="form-label">
-                  <ChatSquareText className="me-1" color="#6d7dd2" size={20} />{" "}
+                  <ChatSquareText className="me-1" color="#36cdcd" size={20} />{" "}
                   Message
                 </label>
                 <textarea
@@ -68,19 +84,40 @@ const Contact = () => {
                   id="message"
                   rows="4"
                   placeholder="Enter your message"
+                  name="message"
                   required
                 ></textarea>
+                <ValidationError
+                  prefix="Message"
+                  field="message"
+                  errors={state.errors}
+                />
               </div>
+
+              {/* Success message */}
+              {state.succeeded && (
+                <div className="alert alert-success d-flex align-items-center mb-3" role="alert">
+                  <CheckCircleFill className="me-2" />
+                  <div>
+                    Thank you for your message! I'll get back to you soon.
+                  </div>
+                </div>
+              )}
+
               <div className="text-center">
-                <button type="submit" className="btn btn-warning">
-                  Send Message
+                <button 
+                  type="submit" 
+                  className="btn btn-warning"
+                  disabled={state.submitting}
+                >
+                  {state.submitting ? 'Sending...' : 'Send Message'}
                 </button>
               </div>
             </form>
           </div>
           <div
-            className="col-6"
-            style={{ backgroundColor: "#6d7dd2" }}
+            className="col-lg-6"
+            style={{ backgroundColor: "#36cdcd" }}
             data-aos="flip-left"
             data-aos-easing="ease-out-cubic"
             data-aos-duration="1000"
@@ -126,12 +163,6 @@ const Contact = () => {
                   </a>
                 </div>
               </div>
-
-              {/* <div className="position-absolute bottom-0 start-0 p-4">
-              <small className="text-white-50">
-                P.S. First coffee is on us if you mention this message ☕
-              </small>
-            </div> */}
             </div>
           </div>
         </div>

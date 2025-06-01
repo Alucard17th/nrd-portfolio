@@ -66,10 +66,10 @@ const About = () => {
           {/* Left: Image */}
           <div className="col-md-5 text-center mb-4 mb-md-0">
             <img
-              src={avatar}
+              src={'/gifs/developer.gif'}
               alt="About Noureddine"
               className="img-fluid"
-              style={{ maxWidth: "80%" }}
+              style={{ maxWidth: "100%" }}
             />
           </div>
 
@@ -96,7 +96,17 @@ const About = () => {
       </div>
       
       <div id="technologies" className="container mt-5 animate__animated animate__fadeInUp animate__delay-1s">
-        <h2 className="fw-bold text-center mb-4">Technologies</h2>
+        
+        <div className="gif d-flex align-items-center justify-content-start">
+          <img
+            src={"/gifs/rocket.gif"}
+            alt="GIF"
+            className="img-fluid me-1"
+            style={{ maxWidth: "10%" }}
+          />
+          <h2 className="fw-bold text-center mb-4" style={{letterSpacing: "12px"}}>Technologies</h2>
+        </div>
+        
         <div className="row g-4 justify-content-center">
           {skills.map((skill, index) => (
             <div 

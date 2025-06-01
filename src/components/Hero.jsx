@@ -35,11 +35,11 @@ const Hero = () => {
     () => ({
       fullScreen: { enable: false }, // ✅ CORRECT capital 'S'
       background: {
-        image: "url('/bg-s.jpg')", // ✅ Path to your image in public/images/
+        image: "url('/background-3.jpg')", // ✅ Path to your image in public/images/
         position: "center",
         size: "cover",
         repeat: "no-repeat",
-        color: "#00000000",
+        color: "#36cdcd",
       },
       backgroundMask: {
         composite: "destination-out",
@@ -82,7 +82,7 @@ const Hero = () => {
           density: { enable: true, area: 800 },
         },
         opacity: { value: 0.5 },
-        shape: { type: "circle" },
+        shape: { type: "square" },
         size: { value: { min: 1, max: 5 } },
       },
       detectRetina: true,
@@ -95,14 +95,14 @@ const Hero = () => {
       id="hero"
       className="position-relative d-flex align-items-center text-white"
       style={{
-        height: "100vh",
+        height: "115vh",
         overflow: "hidden",
-        backgroundColor: "#0d47a1",
+        // backgroundColor: "#0d47a1",
       }}
     >
       {/* Confined particles (not full screen) */}
       <div
-        className="position-absolute w-100 h-100 top-0 start-0"
+        className="position-absolute w-100 h-100 top-0 start-0 hero-particles"
         style={{ zIndex: 0 }}
       >
         <Particles options={options} />
@@ -111,19 +111,19 @@ const Hero = () => {
       {/* Content */}
       <div className="container position-relative" style={{ zIndex: 1 }}>
         <div className="row align-items-center">
-          <div className="col-md-6 text-center text-md-start">
+          <div className="col-md-6 text-center text-md-start hero-text">
             <h1 className="display-4 fw-bold mb-3">
               Hi, I'm <span className="text-warning">Noureddine</span>
             </h1>
             <h2 className="mb-4">
-              <span id="typed-text" className="text-light fw-semibold"></span>
+              <span id="typed-text" className="text-light fw-semibold hero-text"></span>
             </h2>
             <p className="lead mb-4">
               I design and build beautiful web experiences that are fast,
               functional, and human-centered.
             </p>
             <div className="d-flex gap-3 justify-content-center justify-content-md-start">
-              <a href="#projects" className="btn btn-outline-warning btn-lg shadow-sm">
+              <a href="#projects" className="btn btn-warning btn-lg shadow-sm">
                 View Projects
               </a>
               <a href="#contact" className="btn btn-outline-light btn-lg">
@@ -140,7 +140,7 @@ const Hero = () => {
             <img
               src={avatar}
               alt="Hero Avatar"
-              className="img-fluid rounded shadow-lg bg-transparent mt-5 w-75"
+              className="img-fluid shadow-lg profile-image mt-5 w-75"
               style={{
                 maxWidth: "100%",
                 animation: "float 4s ease-in-out infinite",
@@ -235,6 +235,27 @@ const Hero = () => {
           padding: 5px;
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
+          .profile-image{
+            background: rgba(255, 255, 255, 0.07);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(2.2px);
+            -webkit-backdrop-filter: blur(2.2px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+          }
+          @media screen and (max-width: 480px) {
+            .hero-text{
+              color: #000 !important;
+            }
+            .hero-particles{
+              display: none;
+              height: 0 !important;
+            }
+              #hero{
+                height: 85vh !important;
+              }
+          }
+          
         `}
       </style>
     </section>
