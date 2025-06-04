@@ -99,7 +99,7 @@ const About = () => {
         
         <div className="gif d-flex align-items-center justify-content-start">
           <img
-            src={"/gifs/rocket.gif"}
+            src={"/gifs/new-rocket.gif"}
             alt="GIF"
             className="img-fluid me-1"
             style={{ maxWidth: "10%" }}

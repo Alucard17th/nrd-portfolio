@@ -55,7 +55,7 @@ const CardProjects = () => {
   };
 
   return (
-    <section id="projects" className="py-5" data-aos="fade-left">
+    <section id="projects" className="py-5 pt-3" data-aos="fade-left">
       <div className="container text-center">
         <div className="row">
           {projects.map((project, index) => (
@@ -111,7 +111,7 @@ const CardProjects = () => {
                     href={project.metadata?.url}
                     target="_blank"
                     style={{ textDecoration: "none" }}
-                    className="btn btn-outline-dark p-2"
+                    className="btn btn-outline-dark p-1 shadow-lg"
                   >
                     <h4
                       className="fw-bold fs-5 my-1 text-white m-0"
@@ -120,7 +120,7 @@ const CardProjects = () => {
                       <img
                         src="/gifs/website.gif"
                         className="img-fluid"
-                        style={{ width: "50px" }}
+                        style={{ width: "30px" }}
                       />
                       Preview
                     </h4>

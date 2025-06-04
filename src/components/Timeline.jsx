@@ -12,7 +12,7 @@ const Timeline = () => {
       <div className="container text-center">
         <div className="gif d-flex align-items-center justify-content-start">
           <img
-            src={"/gifs/experience.gif"}
+            src={"/gifs/new-experience.gif"}
             alt="GIF"
             className="img-fluid me-1"
             style={{ maxWidth: "10%" }}

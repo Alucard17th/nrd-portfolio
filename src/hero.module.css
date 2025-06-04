@@ -1,0 +1,73 @@
+/* Variables make tweaking easy */
+:root {
+  --panel-dark: #000;
+  --panel-light: #fff;
+  /* --blob-size: clamp(18rem, 28vw, 32rem); */
+  --blob-size: 44vw;
+  --avatar-scale: clamp(0.8, 1.2vw + 0.6, 1.15);
+}
+
+/* ───── Root section ───── */
+.hero {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  isolation: isolate;            /* keeps particles inside panel */
+}
+
+/* ───── Left / Visual panel ───── */
+.visualPanel {
+  position: relative;
+  background: var(--panel-dark);
+  flex: 0 0 auto;
+  width: 100%;
+  height: 60vh;
+}
+
+@media (min-width: 992px) {      /* ≥ lg */
+  .hero {
+    flex-direction: row;
+  }
+  .visualPanel {
+    flex: 0 0 38%;
+    height: auto;
+  }
+}
+
+.particles {
+  position: absolute;
+  inset: 0;
+}
+
+.blob {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--blob-size);
+  translate: -50% -50%;
+}
+
+.avatar {
+    width: 250px;
+  position: absolute;
+  top: 15%;
+  left: 37%;
+  transform: translate(-50%, -55%) scale(var(--avatar-scale));
+  /* small elevation so avatar sits over blob */
+  z-index: 2;
+}
+
+/* ───── Right / Content panel ───── */
+.contentPanel {
+  flex: 1 1 auto;
+  background: var(--panel-light);
+  padding: clamp(1.5rem, 4vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.headline {
+  font-size: clamp(2.2rem, 4vw + 1rem, 4rem);
+  line-height: 1.2;
+}

@@ -33,16 +33,16 @@ const Navbar = () => {
           <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul className="navbar-nav gap-3">
               <li className="nav-item">
-                <a className={`nav-link fw-medium ${scrolled ? 'text-dark' : 'text-white'}`} href="#about">About</a>
+                <a className={`nav-link fw-medium ${scrolled ? 'text-dark' : 'text-dark'}`} href="#about">About</a>
               </li>
               <li className="nav-item">
-                <a className={`nav-link fw-medium ${scrolled ? 'text-dark' : 'text-white'}`} href="#experience">Experience</a>
+                <a className={`nav-link fw-medium ${scrolled ? 'text-dark' : 'text-dark'}`} href="#experience">Experience</a>
               </li>
               <li className="nav-item">
-                <a className={`nav-link fw-medium ${scrolled ? 'text-dark' : 'text-white'}`} href="#projects">Projects</a>
+                <a className={`nav-link fw-medium ${scrolled ? 'text-dark' : 'text-dark'}`} href="#projects">Projects</a>
               </li>
               <li className="nav-item">
-                <a className={`nav-link fw-medium ${scrolled ? 'text-dark' : 'text-white'}`} href="#contact">Contact</a>
+                <a className={`nav-link fw-medium ${scrolled ? 'text-dark' : 'text-dark'}`} href="#contact">Contact</a>
               </li>
             </ul>
           </div>
