@@ -115,7 +115,7 @@ const About = () => {
               key={skill.name}
               ref={el => skillRefs.current[index] = el}
             >
-              <div className="skill-badge-card p-3 text-center h-100">
+              <div className="skill-badge-card p-3 text-center h-100 bg-light shadow-sm">
                 <div className="skill-icon mb-2">
                   <img
                     src={`https://img.shields.io/badge/${skill.name}-${skill.color}?style=for-the-badge&logo=${skill.icon}&logoColor=white`}
@@ -164,7 +164,7 @@ const About = () => {
         .skill-badge-card {
           transition: transform 0.3s ease, box-shadow 0.3s ease;
           border-radius: 8px;
-          background: #ffc10738;
+          // background: #ffc10738;
           box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
         
