@@ -111,7 +111,7 @@ const HeroA = () => {
           </div>
 
           {/* Right Column (col-8) - Content */}
-          <div className="col-md-8 d-flex align-items-center bg-white">
+          <div className="col-md-8 d-flex align-items-center bg-white mt-lg-5">
             <div
               className="p-5"
               style={{ maxWidth: "800px", marginLeft: "auto" }}

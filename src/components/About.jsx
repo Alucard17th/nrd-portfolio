@@ -163,13 +163,14 @@ const About = () => {
         .skill-badge-card {
           transition: transform 0.3s ease, box-shadow 0.3s ease;
           border-radius: 8px;
-          background: white;
+          background: #ffc10738;
           box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
         
         .skill-badge-card:hover {
           transform: translateY(-5px);
           box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+          cursor: pointer;
         }
         
         .progress {

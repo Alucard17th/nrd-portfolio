@@ -20,7 +20,7 @@ const Navbar = () => {
             Noureddine<span className="text-primary">.</span>
           </a>
           <button
-            className="navbar-toggler"
+            className="navbar-toggler bg-warning"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
@@ -30,7 +30,7 @@ const Navbar = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <div className="collapse navbar-collapse justify-content-end p-3" id="navbarNav">
             <ul className="navbar-nav gap-3">
               <li className="nav-item">
                 <a className={`nav-link fw-medium ${scrolled ? 'text-dark' : 'text-dark'}`} href="#about">About</a>
@@ -58,6 +58,13 @@ const Navbar = () => {
           .nav-link:hover {
             color: #0d6efd !important;
           }
+            @media (max-width: 992px) {
+              #navbarNav {
+                background-color: #ffc107 !important;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                border-radius: 5px;
+              }
+            }
         `}
       </style>
     </header>
