@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "home": "https://alucard17th.github.io/nrd-portfolio",
+  "home": "https://alucard17th.github.io/nrd-portfolio/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
