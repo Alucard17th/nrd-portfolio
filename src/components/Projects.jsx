@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CardProjects from "./CardProjects";
 import ThreeDProjects from "./ThreeDProjects";
+import projects from "../assets/gifs/new-projects.gif";
 
 const Projects = () => {
   return (
@@ -8,7 +9,7 @@ const Projects = () => {
       <div className="toggle-container">
         <div className="d-flex align-items-center">
           <img
-            src={"/gifs/new-projects.gif"}
+            src={projects}
             alt="GIF"
             className="img-fluid me-1"
             style={{ maxWidth: "10%" }}

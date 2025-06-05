@@ -2,6 +2,12 @@ import { useEffect, useState } from "react";
 import { getProjects } from "../services/cosmic";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import react from "../assets/icons/react.png";
+import laravel from "../assets/icons/laravel.png";
+import wp from "../assets/icons/wp.png";
+import livewire from "../assets/icons/livewire.png";
+import website from "../assets/gifs/website.gif";
+
 
 const CardProjects = () => {
   useEffect(() => {
@@ -42,13 +48,13 @@ const CardProjects = () => {
   const technologieImage = (tech) => {
     switch (tech) {
       case "React":
-        return "/icons/react.png";
+        return react;
       case "Laravel":
-        return "/icons/laravel.png";
+        return laravel;
       case "Wordpress":
-        return "/icons/wp.png";
+        return wp;
       case "Livewire":
-        return "/icons/livewire.png";
+        return livewire;
       default:
         return "";
     }
@@ -118,7 +124,7 @@ const CardProjects = () => {
                       style={{ color: project.metadata?.color }}
                     >
                       <img
-                        src="/gifs/website.gif"
+                        src={website}
                         className="img-fluid"
                         style={{ width: "30px" }}
                       />

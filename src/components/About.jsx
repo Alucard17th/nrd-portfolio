@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
-import avatar from "../assets/dev.jpg";
+import developer from "../assets/gifs/developer.gif";
+import technologies from "../assets/gifs/new-rocket.gif";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -66,7 +67,7 @@ const About = () => {
           {/* Left: Image */}
           <div className="col-md-5 text-center mb-4 mb-md-0">
             <img
-              src={'/gifs/developer.gif'}
+              src={developer}
               alt="About Noureddine"
               className="img-fluid"
               style={{ maxWidth: "100%" }}
@@ -99,7 +100,7 @@ const About = () => {
         
         <div className="gif d-flex align-items-center justify-content-start">
           <img
-            src={"/gifs/new-rocket.gif"}
+            src={technologies}
             alt="GIF"
             className="img-fluid me-1"
             style={{ maxWidth: "10%" }}

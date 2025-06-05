@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import experience from "../assets/gifs/new-experience.gif";
 
 const Timeline = () => {
   useEffect(() => {
@@ -12,7 +13,7 @@ const Timeline = () => {
       <div className="container text-center">
         <div className="gif d-flex align-items-center justify-content-start">
           <img
-            src={"/gifs/new-experience.gif"}
+            src={experience}
             alt="GIF"
             className="img-fluid me-1"
             style={{ maxWidth: "10%" }}
