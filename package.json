@@ -1,6 +1,6 @@
 {
   "name": "nrd-portfolio",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "home": "https://alucard17th.github.io/nrd-portfolio/",
