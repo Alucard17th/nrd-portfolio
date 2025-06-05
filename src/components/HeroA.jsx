@@ -111,7 +111,7 @@ const HeroA = () => {
           </div>
 
           {/* Right Column (col-8) - Content */}
-          <div className="col-md-8 d-flex align-items-center bg-white mt-lg-5">
+          <div className="col-md-8 d-flex align-items-center custom-bg mt-lg-5">
             <div
               className="p-5"
               style={{ maxWidth: "800px", marginLeft: "auto" }}
@@ -141,16 +141,16 @@ const HeroA = () => {
                 <p className="text-muted mb-2">FOLLOW ME ON:</p>
                 {/* Add social icons here */}
                 <div className="d-flex gap-4">
-                  <a href="#" className="text-dark">
+                  <a href="https://x.com/EddallalNordin" className="text-dark" target="_blank">
                     <Twitter size={24} />
                   </a>
-                  <a href="#" className="text-dark">
+                  <a href="https://www.linkedin.com/in/noureddine-eddallal-03aba3182/" className="text-dark" target="_blank">
                     <Linkedin size={24} />
                   </a>
-                  <a href="#" className="text-dark">
+                  <a href="https://github.com/Alucard17th" className="text-dark" target="_blank">
                     <Github size={24} />
                   </a>
-                  <a href="#" className="text-dark">
+                  <a href="https://discord.com/channels/@me" className="text-dark" target="_blank">
                     <Discord size={24} />
                   </a>
                 </div>

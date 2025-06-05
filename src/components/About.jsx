@@ -2,19 +2,24 @@ import { useEffect, useRef } from "react";
 import developer from "../assets/gifs/developer.gif";
 import technologies from "../assets/gifs/new-rocket.gif";
 
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const About = () => {
-  
   useEffect(() => {
-        AOS.init();
-      }, [])
+    AOS.init();
+  }, []);
 
   const skills = [
     { name: "HTML5", color: "E34F26", icon: "html5", level: 90 },
     { name: "CSS3", color: "1572B6", icon: "css3", level: 85 },
-    { name: "JavaScript", color: "F7DF1E", textColor: "black", icon: "javascript", level: 80 },
+    {
+      name: "JavaScript",
+      color: "F7DF1E",
+      textColor: "black",
+      icon: "javascript",
+      level: 80,
+    },
     { name: "React", color: "61DAFB", icon: "react", level: 75 },
     { name: "Laravel", color: "FF2D20", icon: "laravel", level: 70 },
     { name: "PHP", color: "777BB4", icon: "php", level: 75 },
@@ -33,13 +38,13 @@ const About = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const progressBar = entry.target.querySelector('.progress-bar');
-            const level = parseInt(progressBar.getAttribute('aria-valuenow'));
-            progressBar.style.width = '0%';
-            
+            const progressBar = entry.target.querySelector(".progress-bar");
+            const level = parseInt(progressBar.getAttribute("aria-valuenow"));
+            progressBar.style.width = "0%";
+
             // Trigger reflow
             progressBar.offsetHeight;
-            
+
             // Animate to full width
             progressBar.style.width = `${level}%`;
             progressBar.style.transition = `width 1.5s ease-out`;
@@ -61,8 +66,8 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about" className="bg-white py-5"  data-aos="fade-up">
-      <div className="container">
+    <section id="about" className="bg-white py-5" data-aos="fade-up">
+      <div className="container-fluid">
         <div className="row align-items-center">
           {/* Left: Image */}
           <div className="col-md-5 text-center mb-4 mb-md-0">
@@ -95,57 +100,67 @@ const About = () => {
           </div>
         </div>
       </div>
-      
-      <div id="technologies" className="container mt-5 animate__animated animate__fadeInUp animate__delay-1s">
-        
-        <div className="gif d-flex align-items-center justify-content-start">
+
+      <div
+        id="technologies"
+        className="container-fluid mt-5 animate__animated animate__fadeInUp animate__delay-1s custom-bg pb-5"
+      >
+        <div className="container gif d-flex align-items-center justify-content-start">
           <img
             src={technologies}
             alt="GIF"
-            className="img-fluid me-1"
+            className="img-fluid me-4 rounded-bottom-4"
             style={{ maxWidth: "10%" }}
           />
-          <h2 className="fw-bold text-center mb-4" style={{letterSpacing: "12px"}}>Technologies</h2>
+          <h2
+            className="fw-bold text-center mb-4"
+            style={{ letterSpacing: "12px" }}
+          >
+            Technologies
+          </h2>
         </div>
-        
-        <div className="row g-4 justify-content-center">
-          {skills.map((skill, index) => (
-            <div 
-              className="col-md-3 col-sm-4 col-6" 
-              key={skill.name}
-              ref={el => skillRefs.current[index] = el}
-            >
-              <div className="skill-badge-card p-3 text-center h-100 bg-light shadow-sm">
-                <div className="skill-icon mb-2">
-                  <img
-                    src={`https://img.shields.io/badge/${skill.name}-${skill.color}?style=for-the-badge&logo=${skill.icon}&logoColor=white`}
-                    alt={skill.name}
-                    className="img-fluid skill-badge"
-                  />
-                </div>
-                <div className="skill-level mt-2">
-                  <div className="progress">
-                    <div
-                      className="progress-bar"
-                      role="progressbar"
-                      style={{
-                        width: "0%", // Start at 0% for animation
-                        backgroundColor: `#${skill.color}`,
-                        transition: "none" // Initial state with no transition
-                      }}
-                      aria-valuenow={skill.level}
-                      aria-valuemin="0"
-                      aria-valuemax="100"
-                    ></div>
+        <div className="container">
+          <div className="row g-4 justify-content-center mt-2">
+            {skills.map((skill, index) => (
+              <div
+                className="col-md-3 col-sm-4 col-6"
+                key={skill.name}
+                ref={(el) => (skillRefs.current[index] = el)}
+              >
+                <div className="skill-badge-card p-3 text-center h-100 bg-light shadow-sm">
+                  <div className="skill-icon mb-2">
+                    <img
+                      src={`https://img.shields.io/badge/${skill.name}-${skill.color}?style=for-the-badge&logo=${skill.icon}&logoColor=white`}
+                      alt={skill.name}
+                      className="img-fluid skill-badge"
+                    />
                   </div>
-                  <small className="text-muted d-block mt-1">{skill.level}%</small>
+                  <div className="skill-level mt-2">
+                    <div className="progress">
+                      <div
+                        className="progress-bar"
+                        role="progressbar"
+                        style={{
+                          width: "0%", // Start at 0% for animation
+                          backgroundColor: `#${skill.color}`,
+                          transition: "none", // Initial state with no transition
+                        }}
+                        aria-valuenow={skill.level}
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                    </div>
+                    <small className="text-muted d-block mt-1">
+                      {skill.level}%
+                    </small>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-      
+
       {/* <div className="position-relative w-100">
         <svg
           viewBox="0 0 1440 320"

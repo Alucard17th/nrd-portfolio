@@ -11,7 +11,7 @@ const Projects = () => {
           <img
             src={projects}
             alt="GIF"
-            className="img-fluid me-1"
+            className="img-fluid me-4 rounded-bottom-4"
             style={{ maxWidth: "10%" }}
           />
           <h2 className="fw-bold text-center" style={{ letterSpacing: "12px" }}>
@@ -19,7 +19,7 @@ const Projects = () => {
           </h2>
           <button
             type="button"
-            className="btn btn-outline-warning"
+            className="btn btn-outline-dark ms-auto"
             style={{ marginLeft: "auto" }}
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"

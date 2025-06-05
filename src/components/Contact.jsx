@@ -149,16 +149,16 @@ const Contact = () => {
               <div className="border-top border-white-50 pt-4">
                 <h4 className="fw-bold mb-3">Our Digital Hangouts</h4>
                 <div className="d-flex gap-4">
-                  <a href="#" className="text-white">
+                  <a href="https://x.com/EddallalNordin" className="text-dark" target="_blank">
                     <Twitter size={24} />
                   </a>
-                  <a href="#" className="text-white">
+                  <a href="https://www.linkedin.com/in/noureddine-eddallal-03aba3182/" className="text-dark" target="_blank">
                     <Linkedin size={24} />
                   </a>
-                  <a href="#" className="text-white">
+                  <a href="https://github.com/Alucard17th" className="text-dark" target="_blank">
                     <Github size={24} />
                   </a>
-                  <a href="#" className="text-white">
+                  <a href="https://discord.com/channels/@me" className="text-dark" target="_blank">
                     <Discord size={24} />
                   </a>
                 </div>

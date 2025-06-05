@@ -15,7 +15,7 @@ const Timeline = () => {
           <img
             src={experience}
             alt="GIF"
-            className="img-fluid me-1"
+            className="img-fluid me-4"
             style={{ maxWidth: "10%" }}
           />
           <h2
